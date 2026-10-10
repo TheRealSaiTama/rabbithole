@@ -63,6 +63,10 @@ One minute ago you were choosing dinner. Now you're defending your entire moral 
 
 - 32 curated prompts across 16 subjects.
 - Random shuffle without immediately repeating the current prompt.
+- 16 pastel subject buckets with a roulette animation that slows down onto your pick.
+- A little confetti moment when the question lands.
+- A bunny timer with wiggly ears, a beating heart, and a last ten seconds nudge.
+- Reduced motion support that skips the roulette and decorative animations.
 - Separate one minute turns, with pause, resume, and reset.
 - A fresh first turn when you change the topic.
 - A layout that stacks on smaller screens.
@@ -102,6 +106,7 @@ assets/
   preview.png      README screenshot
 tests/
   topics.test.mjs  topic selection and timer checks
+  game.test.mjs    roulette, motion preferences, and turn controls
 server.mjs        local preview server
 ```
 
@@ -123,7 +128,7 @@ To format your changes:
 npm run format
 ```
 
-Tests use Node's built in test runner. They check that every subject can select a different prompt and that delayed timer ticks stop at zero.
+Tests use Node's built in test runner. They check topic selection, shuffle locking, reduced motion, pause and resume, and the second speaker's fresh minute. The interaction tests run the browser module with a small DOM stub and a controlled clock.
 
 There is no bundling step. `npm run build` checks the browser entry point's syntax. Serve the contents of `dist/` with any static host. `server.mjs` is for local development.
 

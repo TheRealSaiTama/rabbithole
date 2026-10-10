@@ -14,28 +14,51 @@
   <body>
     <header>
       <a class="brand" href="./" aria-label="Rabbit Hole home"
-        ><span class="brand-icon">↘</span> rabbit hole<span class="brand-dot"
+        ><span class="brand-icon">🐇</span> rabbit hole<span class="brand-dot"
           >●</span
         ></a
-      ><span class="header-note">FOR TWO CURIOUS PEOPLE</span
-      ><button class="how-button" id="how">How to play <span>↗</span></button>
+      ><span class="header-note">a tiny adventure for two ♡</span
+      ><button class="how-button" id="how">How to play <span>?</span></button>
     </header>
     <main>
       <section class="intro">
         <div class="eyebrow">
-          <span></span> A LITTLE CURIOSITY. A LITTLE CONNECTION.
+          <span></span> PUT YOUR PHONES DOWN. GET A LITTLE LOST.
         </div>
-        <h1>Good conversations<br />start with <em>a rabbit hole.</em></h1>
+        <div class="hero-doodles" aria-hidden="true">
+          <span>♡</span><span>✦</span><span>✿</span><span>♡</span>
+        </div>
+        <h1>You, me &amp;<br /><em>a rabbit hole.</em></h1>
         <p>
-          One unexpected topic. One minute each.<br />See where your minds
-          wander.
+          A silly little question. A whole new side of you.<br />One minute
+          each. Let’s see where this goes.
         </p>
-        <div class="scribble">no small talk required <span>⤵</span></div>
+        <div class="scribble">curiosity looks cute on you ♡</div>
+      </section>
+      <section class="bucket-section" aria-label="Choose a subject">
+        <div class="bucket-heading">
+          <div>
+            <span class="eyebrow">16 LITTLE WORLDS TO GET LOST IN</span>
+            <h2>Where are we wandering?</h2>
+          </div>
+          <button class="shuffle" id="shuffle">
+            <span aria-hidden="true">🎲</span> Surprise us!
+          </button>
+        </div>
+        <div class="buckets" id="buckets"></div>
+        <div class="bucket-bottom">
+          <button class="anything active" id="anything" aria-pressed="true">
+            ✨ A little bit of everything</button
+          ><span id="shuffle-status" role="status"
+            >Pick a bucket, or leave it to the universe.</span
+          >
+        </div>
       </section>
       <section class="game" aria-label="Conversation game">
-        <div class="topic-panel">
+        <div class="topic-panel" id="topic-panel">
+          <div class="confetti" id="confetti" aria-hidden="true"></div>
           <div class="card-top">
-            <span class="eyebrow">YOUR NEXT RABBIT HOLE</span
+            <span class="eyebrow">OOH, LET’S TALK ABOUT THIS</span
             ><span class="round-label" id="round">ROUND 01</span>
           </div>
           <div class="topic-tag" id="topic-tag">✧ SPACE</div>
@@ -43,16 +66,18 @@
           <p class="hint" id="hint"></p>
           <div class="card-bottom">
             <span id="topic-title"></span
-            ><span class="orbit" aria-hidden="true">✳</span>
+            ><span class="orbit" id="topic-art" aria-hidden="true">🪐</span>
           </div>
         </div>
         <div class="timer-panel">
           <div class="turn-label" id="turn-label">THE FLOOR IS YOURS</div>
           <div class="speakers">
-            <span class="speaker active" id="person-one">Person 1</span
-            ><span class="speaker" id="person-two">Person 2</span>
+            <span class="speaker active" id="person-one">🌷 Person 1</span
+            ><span class="speaker" id="person-two">🍀 Person 2</span>
           </div>
           <div class="clock" id="clock">
+            <span class="clock-ear left" aria-hidden="true"></span
+            ><span class="clock-ear right" aria-hidden="true"></span>
             <svg viewBox="0 0 200 200" aria-hidden="true">
               <circle class="track" cx="100" cy="100" r="89"></circle>
               <circle
@@ -63,15 +88,19 @@
                 r="89"
               ></circle>
             </svg>
-            <div>
+            <div class="clock-face">
               <span class="time" id="time" role="timer">1:00</span
               ><span class="clock-caption" id="clock-caption"
                 >A MINUTE TO WANDER</span
               >
             </div>
+            <div class="clock-friend" aria-hidden="true">
+              <span></span><i>ᴗ</i><span></span>
+            </div>
+            <span class="clock-heart" aria-hidden="true">♥</span>
           </div>
           <button class="start-button" id="start">
-            Let’s talk <span>↗</span></button
+            Let’s talk <span>♡</span></button
           ><button class="reset-button" id="reset">↺ Reset timer</button>
           <p class="timer-note" id="timer-note">
             One talks. One listens. Then switch.
@@ -81,14 +110,14 @@
       </section>
       <section class="controls" aria-label="Topic settings">
         <div class="subject-control">
-          <label for="subject">IN THE MOOD FOR</label
+          <label for="subject">Your chosen little world</label
           ><select id="subject">
             <option>Anything</option>
           </select>
         </div>
-        <button class="shuffle" id="shuffle">
-          <span>⤨</span> Another rabbit hole
-        </button>
+        <span class="round-note"
+          >No right answers. Just your wonderfully weird brain.</span
+        >
       </section>
       <section class="little-note">
         <span aria-hidden="true">♡</span>
@@ -100,7 +129,7 @@
       </section>
     </main>
     <footer>
-      <span>rabbit hole · less scrolling, more connecting</span
+      <span>rabbit hole · made for your “wait, me too!” moments</span
       ><span
         >MADE FOR THE MOMENT BETWEEN YOU TWO
         <span class="footer-star">✳</span></span
