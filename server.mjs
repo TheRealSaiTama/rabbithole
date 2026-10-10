@@ -19,10 +19,11 @@ http
         return;
       }
       const file = path === root ? resolve(root, 'index.html') : path;
+      const content = await readFile(file);
       res.writeHead(200, {
         'Content-Type': types[extname(file)] || 'application/octet-stream',
       });
-      res.end(await readFile(file));
+      res.end(content);
     } catch {
       res.writeHead(404).end('Not found');
     }
