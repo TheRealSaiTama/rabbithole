@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f3eb" />
+    <meta
+      name="description"
+      content="A random topic. One minute each. A little closer. A conversation game for two curious people."
+    />
+    <title>Rabbit Hole · Get curious together</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./" aria-label="Rabbit Hole home"
+        ><span class="brand-icon">↘</span> rabbit hole<span class="brand-dot"
+          >●</span
+        ></a
+      ><span class="header-note">FOR TWO CURIOUS PEOPLE</span
+      ><button class="how-button" id="how">How to play <span>↗</span></button>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">
+          <span></span> A LITTLE CURIOSITY. A LITTLE CONNECTION.
+        </div>
+        <h1>Good conversations<br />start with <em>a rabbit hole.</em></h1>
+        <p>
+          One unexpected topic. One minute each.<br />See where your minds
+          wander.
+        </p>
+        <div class="scribble">no small talk required <span>⤵</span></div>
+      </section>
+      <section class="game" aria-label="Conversation game">
+        <div class="topic-panel">
+          <div class="card-top">
+            <span class="eyebrow">YOUR NEXT RABBIT HOLE</span
+            ><span class="round-label" id="round">ROUND 01</span>
+          </div>
+          <div class="topic-tag" id="topic-tag">✧ SPACE</div>
+          <h2 id="question"></h2>
+          <p class="hint" id="hint"></p>
+          <div class="card-bottom">
+            <span id="topic-title"></span
+            ><span class="orbit" aria-hidden="true">✳</span>
+          </div>
+        </div>
+        <div class="timer-panel">
+          <div class="turn-label" id="turn-label">THE FLOOR IS YOURS</div>
+          <div class="speakers">
+            <span class="speaker active" id="person-one">Person 1</span
+            ><span class="speaker" id="person-two">Person 2</span>
+          </div>
+          <div class="clock" id="clock">
+            <svg viewBox="0 0 200 200" aria-hidden="true">
+              <circle class="track" cx="100" cy="100" r="89"></circle>
+              <circle
+                class="progress"
+                id="progress"
+                cx="100"
+                cy="100"
+                r="89"
+              ></circle>
+            </svg>
+            <div>
+              <span class="time" id="time" role="timer">1:00</span
+              ><span class="clock-caption" id="clock-caption"
+                >A MINUTE TO WANDER</span
+              >
+            </div>
+          </div>
+          <button class="start-button" id="start">
+            Let’s talk <span>↗</span></button
+          ><button class="reset-button" id="reset">↺ Reset timer</button>
+          <p class="timer-note" id="timer-note">
+            One talks. One listens. Then switch.
+          </p>
+          <div class="sr-only" aria-live="polite" id="announcement"></div>
+        </div>
+      </section>
+      <section class="controls" aria-label="Topic settings">
+        <div class="subject-control">
+          <label for="subject">IN THE MOOD FOR</label
+          ><select id="subject">
+            <option>Anything</option>
+          </select>
+        </div>
+        <button class="shuffle" id="shuffle">
+          <span>⤨</span> Another rabbit hole
+        </button>
+      </section>
+      <section class="little-note">
+        <span aria-hidden="true">♡</span>
+        <p>
+          You don’t need to know the answer.<br /><strong
+            >Just be curious about theirs.</strong
+          >
+        </p>
+      </section>
+    </main>
+    <footer>
+      <span>rabbit hole · less scrolling, more connecting</span
+      ><span
+        >MADE FOR THE MOMENT BETWEEN YOU TWO
+        <span class="footer-star">✳</span></span
+      >
+    </footer>
+    <dialog id="instructions">
+      <button class="close-dialog" id="close" aria-label="Close instructions">
+        ×</button
+      ><span class="eyebrow">A DATE WITH CURIOSITY</span>
+      <h2>Two people.<br />One rabbit hole.</h2>
+      <ol>
+        <li>Pick a subject or let chance decide.</li>
+        <li>Read the topic together. There are no right answers.</li>
+        <li>Person 1 talks for a minute while Person 2 listens.</li>
+        <li>Pass the turn. Person 2 gets their minute.</li>
+        <li>Keep talking or find another rabbit hole.</li>
+      </ol>
+      <p>Put the screen between you. Let the conversation do the rest.</p>
+    </dialog>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>
